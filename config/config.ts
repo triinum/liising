@@ -9,14 +9,16 @@ export const config: Config = {
 
     SELENIUM_PROMISE_MANAGER: false,
 
-    baseUrl: "http://www.google.com",
+    baseUrl: "http://www.linkedin.com",
 
-    capabilities: {
-        browserName: "chrome",
-    },
-
+     Capabilities: [
+        //{'browserName': 'firefox'}
+         {'browserName': 'chrome'},
+        // {'browserName': 'internet explorer'}
+        ],
     framework: "custom",
     frameworkPath: require.resolve("protractor-cucumber-framework"),
+    allScriptsTimeout: 30000,
 
     specs: [
         "../../features/*.feature",
@@ -33,7 +35,8 @@ export const config: Config = {
         format: "json:./reports/json/cucumber_report.json",
         require: ["../../stepdefinitions/*.ts", "../../support/*.ts"],
         strict: true,
-        tags: "@TypeScriptScenario or @CucumberScenario or @ProtractorScenario",
+        keepAlive: false,
+        tags: "@CaminoFeliz",
     },
 
     onComplete: () => {

@@ -3,7 +3,7 @@ import * as fs from "fs";
 import { browser } from "protractor";
 import { config } from "../config/config";
 
-BeforeAll({timeout: 10 * 1000}, async () => {
+BeforeAll({timeout: 30 * 1000}, async () => {
     await browser.get(config.baseUrl);
 });
 
