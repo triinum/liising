@@ -9,7 +9,7 @@ export const config: Config = {
 
     SELENIUM_PROMISE_MANAGER: false,
 
-    baseUrl: "http://www.linkedin.com",
+    baseUrl: "https://rhr.nortal.com:4443/rhr-web/#/",
 
      Capabilities: [
         //{'browserName': 'firefox'}
@@ -18,7 +18,7 @@ export const config: Config = {
         ],
     framework: "custom",
     frameworkPath: require.resolve("protractor-cucumber-framework"),
-    allScriptsTimeout: 30000,
+    allScriptsTimeout: 300000,
 
     specs: [
         "../../features/*.feature",
@@ -26,17 +26,21 @@ export const config: Config = {
 
     onPrepare: () => {
         browser.ignoreSynchronization = true;
-        browser.manage().window().maximize();
+        browser.driver.manage().window().maximize();
         Reporter.createDirectory(jsonReports);
+        
+    
     },
+    
+
 
     cucumberOpts: {
         compiler: "ts:ts-node/register",
         format: "json:./reports/json/cucumber_report.json",
         require: ["../../stepdefinitions/*.ts", "../../support/*.ts"],
         strict: true,
-        keepAlive: false,
-        tags: "@CaminoFeliz",
+        keepAlive: true, //jätab sessiooni ellu pärast testi, et saaks hankega edasi minna
+        tags: "@TriinuM",
     },
 
     onComplete: () => {
