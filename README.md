@@ -3,16 +3,9 @@
 </p>
 
 <p align="center">
-   <i><strong>This project demonstrates the basic protractor-cucumber-typescript framework project setup.
+   <i><strong>RHR Protractor-Cucumber-Typescript UI testid
 </strong></i>
 <p>
-
-<p align="center">
-<a href="https://circleci.com/gh/igniteram/protractor-cucumber-typescript/tree/master"><img alt="circleCI Status" src="https://circleci.com/gh/igniteram/protractor-cucumber-typescript/tree/master.svg?style=shield"></a>
-<a href="https://david-dm.org/igniteram/protractor-cucumber-typescript"><img alt="dependencies status" src="https://david-dm.org/igniteram/protractor-cucumber-typescript.svg"></a>
-<a href=""><img alt="typescript" src="https://badges.frapsoft.com/typescript/code/typescript.svg?v=101">
-<a href="https://opensource.org/licenses/MIT"><img alt="MIT License" src="https://img.shields.io/dub/l/vibe-d.svg"></a>
-</p>
 
 ---
 
@@ -150,5 +143,5 @@ For contributors who want to improve this repo by contributing some code, report
 ```   
 MIT License
 
-Copyright (c) 2017 Ram Pasala
+
 ```
