@@ -12,8 +12,7 @@
 
 ### Protractor-Cucumber-TypeScript Setup Guide   
 
-### Medium Article
-Please do checkout my medium article which would give you more insight on this setup. [protractor-cucumber-typescript(Medium)](https://medium.com/@igniteram/e2e-testing-with-protractor-cucumber-using-typescript-564575814e4a)
+
 
 ### Features
 * No typings.json or typings folder, they have been replaced by better **'@types'** modules in package.json.
@@ -87,10 +86,10 @@ const { Given } = require("cucumber");
 const chai = require("chai").use(require("chai-as-promised"));
 const expect = chai.expect;
 
-const search: SearchPageObject = new SearchPageObject();
+const search: ProcurementPageObject = new ProcurementPageObject();
 
-Given(/^I am on google page$/, async () => {
-    await expect(browser.getTitle()).to.eventually.equal("Google");
+Given(/^I am on procurement page$/, async () => {
+    await expect(browser.getTitle()).to.eventually.equal("Riigihangete Register");
 });
 ```
 
@@ -98,13 +97,13 @@ Given(/^I am on google page$/, async () => {
 ```
 import { $ } from "protractor";
 
-export class SearchPageObject {
+export class ProcurementPageObject {
     public searchTextBox: any;
     public searchButton: any;
 
     constructor() {
         this.searchTextBox = $("#lst-ib");
-        this.searchButton = $("input[value='Google Search']");
+        this.searchButton = $("input[value='Procurement Search']");
     }
 }
 ```
@@ -130,14 +129,9 @@ cucumberOpts: {
     tags: "@TypeScriptScenario or @CucumberScenario or @ProtractorScenario",
 },
 ```
-#### HTML Reports
-Currently this project has been integrated with [cucumber-html-reporter](https://github.com/gkushang/cucumber-html-reporter), which is generated in the `reports` folder when you run `npm test`.
-They can be customized according to user's specific needs.
 
-![cucumberreporterscreen](https://raw.githubusercontent.com/igniteram/protractor-cucumber-typescript/master/images/cucumberReporter.PNG)
 
-## Contributions
-For contributors who want to improve this repo by contributing some code, reporting bugs, issues or improving documentation - PR's are highly welcome, please maintain the coding style , folder structure , detailed description of documentation and bugs/issues with examples if possible.
+
 
 ## License
 ```   
