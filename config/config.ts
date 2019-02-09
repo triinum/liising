@@ -3,6 +3,9 @@ import { browser, Config } from "protractor";
 import { Reporter } from "../support/reporter";
 const jsonReports = process.cwd() + "/reports/json";
 
+//headless brauser
+process.env.CHROME_BIN = process.env.CHROME_BIN || require('puppeteer').executablePath();
+
 export const config: Config = {
 
     seleniumAddress: "http://127.0.0.1:4444/wd/hub",
@@ -11,11 +14,14 @@ export const config: Config = {
 
     baseUrl: "https://rhr.nortal.com:4443/rhr-web/#/",
 
-     Capabilities: [
-        //{'browserName': 'firefox'}
-         {'browserName': 'chrome'},
-        // {'browserName': 'internet explorer'}
-        ],
+     capabilities: {
+    'browserName': 'chrome',
+    'chromeOptions': {
+      'args': ['--no-sandbox', '--headless', '--window-size=1024,768', binary: process.env.CHROME_BIN]
+    }
+  },
+  
+  
     framework: "custom",
     frameworkPath: require.resolve("protractor-cucumber-framework"),
     allScriptsTimeout: 300000,
